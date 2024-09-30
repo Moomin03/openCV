@@ -1,0 +1,20 @@
+import cv2 as cv
+import matplotlib.pyplot as plt
+
+img = cv.imread('/home/admin/Develop/openCV/사진 파일/lingard.jpg')
+h = cv.calcHist([img], [2], None, [256], [0, 256])
+h1 = cv.calcHist([img], [1], None, [256], [0, 256])
+h2 = cv.calcHist([img], [0], None, [256], [0, 256])
+plt.plot(h, color='r', linewidth=1, label='Red')
+plt.plot(h1, color='g', linewidth=1, label='Green')
+plt.plot(h2, color='b', linewidth=1, label="Blue")
+plt.title('RGB graph')
+plt.legend()
+plt.show()
+h = cv.calcHist([img], [2], None, [128], [0, 128])
+h1 = cv.calcHist([img], [1], None, [128], [0, 128])
+h2 = cv.calcHist([img], [0], None, [128], [0, 128])
+plt.plot(h, color='r', linewidth=1, label='Red')
+plt.plot(h1, color='g', linewidth=1, label='Green')
+plt.plot(h2, color='b', linewidth=1, label="Blue")
+plt.show()
